@@ -3,8 +3,8 @@ import { Services } from './service';
 
 export async function fetchData(req: Request, res: Response) {
     try {
-        const { pages } = req.params;
-        const data = await Services.fetchData(pages).then(data => res.json(data));
+        const { pages, city, state } = req.body;
+        const data = await Services.fetchData(pages, city, state).then(data => res.json(data));
 
         return data;
     } catch (err) {

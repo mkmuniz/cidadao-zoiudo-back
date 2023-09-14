@@ -3,7 +3,7 @@ import * as controller from "./controller";
 const router = Router();
 
 router
-    .post('/fetch-data/:pages', controller.fetchData)
+    .post('/fetch-data', controller.fetchData)
     .get('/', function (req: any, res: any) {
         res.json({ status: 'System is working, good job!' })
     });
