@@ -1,6 +1,6 @@
 ## About
 
-Back-end created for `CidadaoZoiudo` project, where our goal is to inspect companies involved in corruption.
+Back-end created for `CidadaoZoiudo` project, our goal is inspect companies involved in corruption.
 
 ## How to run
 
@@ -18,9 +18,16 @@ Back-end created for `CidadaoZoiudo` project, where our goal is to inspect compa
 {"status":"System is working, good job!"}
 ```
 
-### POST /fetch-data/:pages
+### POST /fetch-data
 
-`pages` param means how many pages do you wanna that scraper paginate in results table. For example `/fetch-data/5` its saying that I want 5 result pages and each page has 20 itens.
+#### params
+```json
+{
+  "pages": "5"
+  "city": "Braganca Paulista",
+  "state": "SP"
+}
+```
 
 ```json
 [
