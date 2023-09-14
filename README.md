@@ -1,6 +1,6 @@
 ## About
 
-Back-end created for `CidadaoZoiudo` project, where our goal is to inspect companies involved to corruption.
+Back-end created for `CidadaoZoiudo` project, where our goal is to inspect companies involved in corruption.
 
 ## How to run
 
