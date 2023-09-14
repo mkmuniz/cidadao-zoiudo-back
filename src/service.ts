@@ -20,7 +20,6 @@ const convenios: Convenio[] = [];
 export class Services {
     static async fetchData(pages: any, city: any, state: any) {
         try {
-            console.log(pages, city, state);
             const browser = await chromium.launch({
                 headless: false,
 
@@ -32,7 +31,7 @@ export class Services {
             await page.click("#login_form > div:nth-child(7) > a");
             await page.click("text=Convênios");
             await page.click("text=Consultar Convênios/Pré-Convênios");
-            await page.selectOption("select[name=\"ufAcessoLivre\"]", state);
+            await page.selectOption("select[name=\"ufAcessoLivre\"]", "SP");
             await page.waitForLoadState('domcontentloaded');
             await page.selectOption("select[id=\"consultarMunicipioAcessoLivre\"]", "6251");
             await page.waitForLoadState();
