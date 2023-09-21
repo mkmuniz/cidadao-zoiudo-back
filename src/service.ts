@@ -46,7 +46,7 @@ export class Services {
             await page.click("text=Consultar Convênios/Pré-Convênios");
             await page.selectOption("select[name=\"ufAcessoLivre\"]", UF);
             await page.waitForLoadState('domcontentloaded');
-
+            
             const cities = await page.$$("select[name=\"municipioAcessoLivre\"] > option");
 
             for (const city of cities) {
@@ -59,9 +59,12 @@ export class Services {
                 }
             };
 
+            await page.fill('#consultarPeriodoInicioExecucaoDe', datePeriod.startDate);
+            await page.fill('#consultarPeriodoInicioExecucaoAte', datePeriod.endDate);
+
             await page.click("input[name=\"consultarPropostaPreenchaOsDadosDaConsultaConsultarForm\"]");
             await page.waitForLoadState();
-            
+
             for (let i = 1; i <= 2; i++) {
                 var link = await page.$$("tbody > tr > td > div[class=\"numeroConvenio\"] > a");
                 for (const href of link) {
@@ -71,7 +74,7 @@ export class Services {
                     }
                     );
                 }
-                await page.click(`text="${i}"`, { timeout: 10000 }).catch(() => null);
+                await page.click(`text="${i}"`, { timeout: 3000 }).catch(() => null);
             };
 
             for (const link of links) {
