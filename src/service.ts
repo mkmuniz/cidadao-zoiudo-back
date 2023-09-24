@@ -114,7 +114,7 @@ export class Services {
             await browser.close();
 
             return convenios;
-        } catch (err) {
+        } catch (err: any) {
             console.log(err);
             return err.message;
         };
