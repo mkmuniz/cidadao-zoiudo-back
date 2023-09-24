@@ -34,7 +34,7 @@ export class Services {
     static async fetchData(UF: any, cityName: any, state: any, datePeriod: any) {
         try {
             const browser = await chromium.launch({
-                headless: false,
+                headless: true,
 
             }); let links: any = [];
             const context = await browser.newContext({ ignoreHTTPSErrors: true });
