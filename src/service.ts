@@ -115,8 +115,7 @@ export class Services {
 
             return convenios;
         } catch (err: any) {
-            console.log(err);
-            return err.message;
+            return err;
         };
     };
 };

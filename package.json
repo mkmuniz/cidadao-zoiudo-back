@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "tsc --watch",
-    "start": "ts-node-dev --files ./src/server.ts --watch",
+    "start": "ts-node ./src/server.ts --watch",
     "dev": "ts-node-dev --files ./src/server.ts --watch"
   },
   "devDependencies": {

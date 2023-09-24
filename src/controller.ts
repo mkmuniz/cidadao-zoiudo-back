@@ -8,7 +8,6 @@ export async function fetchData(req: Request, res: Response) {
 
         return data;
     } catch (err: any) {
-        console.log(err.message);
-        return err.message;
+        return err;
     };
 };
