@@ -8,6 +8,7 @@ export async function fetchData(req: Request, res: Response) {
 
         return data;
     } catch (err) {
+        console.log(err);
         return err;
     };
 };
