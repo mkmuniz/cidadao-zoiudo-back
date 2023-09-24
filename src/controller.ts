@@ -7,8 +7,8 @@ export async function fetchData(req: Request, res: Response) {
         const data = await Services.fetchData(UF, city, state, datePeriod).then(data => res.json(data));
 
         return data;
-    } catch (err) {
-        console.log(err);
-        return err;
+    } catch (err: any) {
+        console.log(err.message);
+        return err.message;
     };
 };
