@@ -1,6 +1,5 @@
-import http from 'https';
+import http from 'http';
 import app from './app';
-const fs = require('fs');
 
 let server = http.createServer(app);
 
