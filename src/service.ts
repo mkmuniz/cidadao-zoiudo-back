@@ -15,8 +15,6 @@ type Convenio = {
     dataLimite: string | null;
 };
 
-const convenios: Convenio[] = [];
-
 function removeAccent(text: string) {
     // Remove acentos usando expressões regulares
     text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -31,12 +29,14 @@ function removeAccent(text: string) {
 }
 
 export class Services {
-    static async fetchData(UF: any, cityName: any, state: any, datePeriod: any) {
+    static async fetchData(UF: any, cityName: any, datePeriod: any) {
         try {
+            const convenios: Convenio[] = [];
+
             const browser = await chromium.launch({
                 headless: true,
-
-            }); let links: any = [];
+            }); 
+            let links: any = [];
             const context = await browser.newContext({ ignoreHTTPSErrors: true });
             const page = await context.newPage();
 
