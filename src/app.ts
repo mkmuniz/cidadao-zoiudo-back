@@ -13,4 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', router);
 
+app.listen((4000), () => {
+    console.log(`Server is listening at ${4000}`);
+});
+
 export default app;
